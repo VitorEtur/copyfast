@@ -30,7 +30,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.torcedordevantagens.com.br/clube/detalhe_financeiro.php?codigo=*"],
+      "matches": ["*"],
       "js": ["content.js"]
     }
   ]
