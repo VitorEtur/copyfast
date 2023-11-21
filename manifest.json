@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "CopyFast",
+  "version": "1.0",
+  "description": "Permite copiar Id, nome e telefone do sócio da página atual.",
+  "permissions": ["activeTab", "tabs", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "copyAction": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+2"
+      },
+      "description": "Atalho para copiar dados"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.torcedordevantagens.com.br/clube/detalhe_financeiro.php?codigo=*"],
+      "js": ["content.js"]
+    }
+  ]
+}
